@@ -12,9 +12,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
   declarations: [
     AppComponent,
     MenuComponent,
-    FooterComponent,
-    HomeComponent,
-    UsuarioComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router'
-import { HomeComponent } from './home/home.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { HomeModule } from './home/home.module';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'usuario', component: UsuarioComponent }, 
+  { path: 'home', loadChildren: './home/home.module#HomeModule' },
+  { path: 'usuario', loadChildren: './usuario/usuario.module#UsuarioModule' },
   //caso seja uma rota vazia
   { path: '', pathMatch: 'full', redirectTo: '/home'},
 ]
@@ -14,7 +13,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {useHash:true})
   ],
   exports: [ RouterModule ]
 })
